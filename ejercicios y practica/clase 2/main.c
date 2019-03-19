@@ -1,36 +1,54 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/*WHILE y do while --> para cuando no se sabe la cantidad de iteraciones que se lleva a cabo.
 int main()
 {
-    int numero;
-    int otroNumero;
+   int i=0;
+    while(i<10)
+    {
+        printf("El numero es %d", i);//SI QUIERE MOSTRAR DEL UNO AL DIEZ printf("El numero es %d", i+1);
+        // el \n es como un enter, pero el \t es una tabulacion, ingresa espacios.. el \a hace sonar el speaker!
+        printf("\n Este es el valor de i: %d", i);
+        i++;
+    }
+    return=0;
+}*/
+//FOR --> Para una cantidad determinada de iteraciones.
+int main()
+{
+    int i;
+    for (i=0;i<10;i++)
+    {
+        printf("El numero es %d", i+1);
 
-    /*TIPOS DE CONVERSION:
-     IMPLICITO:
+    }
 
-     a = b;
+    /*FOR INFINITO
+    1)
+    int i=10;
+    for (;;)
+    {
+        printf("El numero es %d", i);
+        i--;
+        if(i==2)
+        {
+            break;
+        }
+    2)
+    for (;;)
+    {
+        printf("El numero es %d", i);
+        i--;
+        if(i==2)
+        {
+            continue; //NO MUESTRA EL 2 SINO QUE CONTINUA CON LA SIGUIENTE ITERACION.
+        }
 
-     EXPLICITO:
-
-     a = (int) b; --> convierte b a integral.*/
 
 
-    int suma;
-    float promedio; //se utiliza un float porque el promedio puede dar entero o decimal.
+        */
 
-    printf("Ingrese un numero: ");
-    scanf("%d", &numero);
-    printf("Ingrese otro numero: ");
-    scanf("%d", &otroNumero);
 
-    suma = numero + otroNumero;
 
-    //promedio = suma/2; //da un numero entero y pierde la precicion decimal */
-
-    promedio = (float)suma/2;
-
-    printf("El promedio es de %.2f", promedio);//el %.2f muestra 2 decimales. EL NUMERO DESPUES DEL PUNTO ES LA CANTIDAD DE DECIMALES QUE SE MUESTRA.
-
-    return 0;
+    return=0;
 }
