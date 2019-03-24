@@ -56,8 +56,34 @@ int main()
     int mayorNumeroNegativo;
     int cantidadNumerosEntreMenosDiezYCincuenta;
     int promedioTotal;
+    int flag=1;
 
+    while(seguir=='s')
+    {
+
+
+
+
+
+
+
+
+
+
+        printf ("lalalal);
+        fflush(stdin);
+        scanf (" %c", &seguir);
+
+
+    }
 
 
     return 0;//NO ELIMINAR.
-}
+
+
+
+
+
+
+
+
