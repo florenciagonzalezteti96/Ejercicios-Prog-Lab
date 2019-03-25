@@ -1,59 +1,88 @@
 #include <stdio.h>
 #include <stdlib.h>
-/*Prototipo o firma --> se usa mucho en lenguajes estructurados. Le ayuda al compilador a verificar la consistencia a la hora de
-pasar el progrma
-tipo de dato que devuelve
-el nombre de la funcion (identificador) --> tiene que ser un verbo, por lo general verbo + sustantivo
-y entre parentesis los parametros --> opcional. a veces queda mas prolijo poner que tipo de datos son
+/*
+funcion main que pida nota (un entero) entre 0 y 10
 
-tipo_de_dato identificador ([parametros])
+1. prototipo
+2. implementacion
+3. usar la funcion
 
-int sumarNumeros (int unNumero, int otroNumero); -->funcion que recibe algo y devuelve algo
-{
-    LOGICA DEL PROGRAMA.
 
-    SI LA FUNCION DEVUELVE UN ENTERO TENGO QUE DECLARAR UN ENTERO Y QUE DEVUELVA UN ENTERO.
+si retorna 1 aprobo si retorna 0 desaprobo
 
-    int resultado;
-
-    resultado = unNumero + otroNumero;
-
-    return resultado; --> ultima funcion
-
-    UNA VEZ QUE YA DECLARE LA FUNCION Y SU LOGICA, LA LLAMO EN LA FUNCION MAIN, PARA QUE APAREZCA EN LA CONSOLA.
-}
+ejercicio uno
+pedir 5 notas (pedirNota)
+cantidad de aprobados;
+promedio de notas de aprobados y promedio de notas de no aprobados
+nota minima para aprobar es 6
 
 */
+int pedirNota (void);//
 
-int sumarNumeros (int , int);
+float sacarPromedio (int suma, int cantidad);//
+
+int aprobarMateria (int notaMinima, int nota);//***
+
+void ejercicioUno (void);
 
 int main()
 {
-    int numeroUno;
-    int numeroDos;
-    int resultado;
+    ejercicioUno();//llamo a la funcion
 
-    printf("Ingrese un numero:");
-    scanf("%d", &numeroUno);
-    printf("Ingrese otro numero:");
-    scanf("%d", &numeroDos);
-
-    resultado = sumarNumeros(numeroUno, numeroDos);
-
-    return resultado;
 }
 
-int sumarNumeros (int unNumero, int otroNumero) //-->funcion que recibe algo y devuelve algo
+int pedirNota (void)//-->CUANDO LA FUNCION TIENE COMO PARAMETRO EL VOID IGUAL LLEVA EL RETURN.//pedir 5 notas
 {
-    //LOGICA DEL PROGRAMA.
+    int nota;
+    int contadorDeNotasIngresadas=0;
 
-    //SI LA FUNCION DEVUELVE UN ENTERO TENGO QUE DECLARAR UN ENTERO Y QUE DEVUELVA UN ENTERO.
+    do
+    {
+        printf("Ingrese una nota del uno al diez:");
+        scanf("%d", &nota);
+    }
+    while(contadorDeNotasIngresadas<5);
 
-    int resultado;
+    contadorDeNotasIngresadas++;
+    return nota;
 
-    resultado = unNumero + otroNumero;
+}
 
-    return resultado; //--> ultima funcion
+float sacarPromedio(int suma, int cantidad)
+{
+    float promedio;
 
-   // UNA VEZ QUE YA DECLARE LA FUNCION Y SU LOGICA, LA LLAMO EN LA FUNCION MAIN, PARA QUE APAREZCA EN LA CONSOLA.
+    promedio=(float)suma/cantidad;
+
+    return promedio;
+}
+
+int aprobarMateria (int notaMinima, int nota)
+{
+    int notaMinima=6;
+    int contadorCantidadDeAprobados=0;
+    int acumuladorNotasAprobadas;
+    int contadorCantidadDeDesaprobados=0;
+    int acumuladorNotasDesaprobadas;
+
+    if(nota>=notaMinima)
+    {
+        contadorCantidadDeAprobados++;
+        acumuladorNotasAprobadas=nota+acumuladorNotasAprobadas;
+    }
+    else{
+        contadorCantidadDeDesaprobados++;
+        acumuladorNotasDesaprobadas=nota+acumuladorNotasDesaprobadas;
+    }
+
+    promedioDeAprobados=sacarPromedio(acumuladorNotasAprobadas, contadorCantidadDeAprobados);// promedio de aprobados
+    promedioDeDesaprobados=sacarPromedio(acumuladorNotasDesaprobadas, contadorCantidadDeDesaprobados);// promedio de desaprobados
+
+    return 0;
+
+}
+
+void ejercicioUno (void)
+{
+
 }
