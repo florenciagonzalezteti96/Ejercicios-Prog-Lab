@@ -6,7 +6,8 @@ Hacer una calculadora. Para ello el programa iniciará y contará con un menú de o
 1. Ingresar 1er operando (A=x)//crear funcion para ingresar operandos//INGRESOS.H//SE USAN FLAGS. SE MUESTRA EL PRIMER
 OPERANDO Y DESPUES VUELVO A CARGAR EL MENU Y MUESTRO EL PRIMER OPERANDO INGRESADO. Y PONGO LA OPCION PARA QUE INGRSE UN SEGUNDO
 
-2. Ingresar 2do operando (B=y)//crear funcion para ingresar operandos//INGRESOS.H
+2. Ingresar 2do operando (B=y)//crear funcion para ingresar operandos//INGRESOS.H// TENGO QUE MOSTAR EL MENU DE NUEVO
+CON LOS DOS OPERANDOS INGRESADOS.
 
 3. Calcular todas las operaciones//se puede tomar como que hay que crear un menu aparte para las opciones a elegir.
 a) Calcular la suma (A+B)//funcion suma
@@ -43,17 +44,24 @@ int main()
     //variable seguir --> no preguntar
 
     int opcion;
+    int primerOperando;
+    int segundoOperando;
+
     char seguir = 's';
 
     do
     {
-        printf("1.Alta \n2.Baja \n3.Informar \n4.Salir \nElija una opcion:");//se puede crear una funcion que cree el menu, o un printf para cada opcion o que quede asi
+        printf("Elija una opcion: \n1.Ingreso de operandos \n2.Eleccion de las operaciones de realizar \n3.Informe de los resultados de las operaciones \n4.Cerrar calculadora\n");//se puede crear una funcion que cree el menu, o un printf para cada opcion o que quede asi
         scanf("%d", &opcion);
 
         switch(opcion)
         {
             case 1:
-            printf("Estoy dando de alta ");
+            printf("Ingrese un primer operando: ");
+            scanf("%d", &primerOperando);
+            printf("Ingrese un segundo operando: ");
+            scanf("%d", &segundoOperando);
+
             break;
 
             case 2:
