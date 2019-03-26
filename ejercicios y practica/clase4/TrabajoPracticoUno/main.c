@@ -1,5 +1,8 @@
 /*
-Hacer una calculadora. Para ello el programa iniciará y contará con un menú de opciones: (crear una funcion para el menu de opciones, utilizar un switch)
+Hacer una calculadora. Para ello el programa iniciará y contará con un menú de opciones:
+//(crear una funcion para el menu de opciones, utilizar un switch)
+//la idea del menu es mostar repetidamente el menu de opciones (usar un while/do while y un switch)
+//
 1. Ingresar 1er operando (A=x)//crear funcion para ingresar operandos
 
 2. Ingresar 2do operando (B=y)//crear funcion para ingresar operandos
@@ -30,8 +33,54 @@ que contenga las funciones para realizar las cinco operaciones.
 #include <stdio.h>
 #include <stdlib.h>
 
+int pedirEntero (char []);
+
 int main()
 {
-    printf("Hello world!\n");
+    //variable opcionesQueEligeElUsuario
+    //variable seguir --> no preguntar
+
+    int opcion;
+    char seguir = 's';
+
+    do
+    {
+        printf("1.Alta \n2.Baja \n3.Informar \n4.Salir \nElija una opcion:");//se puede crear una funcion que cree el menu, o un printf para cada opcion o que quede asi
+        scanf("%d", &opcion);
+
+        switch(opcion)
+        {
+            case 1:
+            printf("Estoy dando de alta ");
+            break;
+
+            case 2:
+            printf("Estoy dando de baja ");
+            break;
+
+            case 3:
+            printf("Estoy informando");
+            break;
+
+            case 4:
+            printf("Estoy saliendo ");
+            seguir='n';
+            break;
+
+            default:
+            printf("\nNo ingreso una opcion valida");
+            break;
+        }
+
+        //system("pause");
+        //system("cls");
+
+    }while(seguir=='s');
+
+
+
     return 0;
 }
+
+
+

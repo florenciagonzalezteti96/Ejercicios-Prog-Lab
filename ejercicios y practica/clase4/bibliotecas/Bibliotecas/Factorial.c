@@ -13,17 +13,14 @@
     legajo = pedirEntero("Ingrese un legajo: ");
     peso = pedirEntero("Ingrese un peso: ");
 
-
-
     return 0;
 }*/
+//int variable --> variable global. =/= variable local
 
 int main()
 {
-    int resultado = calcularFactorial (5);
+    int resultado = calcularFactorial (5);//calcularFactorial (5)-> PARAMETRO ACTUAL. EL PARAMETRO EN EL PROTORIPO ES UN PARAMETRO FORMAL.
     printf("%d", resultado);
-
-sdsd
 
     return 0;
 }
