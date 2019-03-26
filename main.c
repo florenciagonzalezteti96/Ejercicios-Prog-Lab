@@ -44,7 +44,8 @@ int pedirNota (void)//-->CUANDO LA FUNCION TIENE COMO PARAMETRO EL VOID IGUAL LL
     while(contadorDeNotasIngresadas<5);
 
     contadorDeNotasIngresadas++;
-    return nota;
+
+    return contadorDeNotasIngresadas;
 
 }
 
@@ -59,11 +60,25 @@ float sacarPromedio(int suma, int cantidad)
 
 int aprobarMateria (int notaMinima, int nota)
 {
-    int notaMinima=6;
+    notaMinima=6;
+
+
+    //promedioDeAprobados=sacarPromedio(acumuladorNotasAprobadas, contadorCantidadDeAprobados);// promedio de aprobados
+    //promedioDeDesaprobados=sacarPromedio(acumuladorNotasDesaprobadas, contadorCantidadDeDesaprobados);// promedio de desaprobados
+
+    return 0;
+
+}
+
+void ejercicioUno (void)
+{
     int contadorCantidadDeAprobados=0;
-    int acumuladorNotasAprobadas;
+    int acumuladorNotasAprobadas=0;
     int contadorCantidadDeDesaprobados=0;
-    int acumuladorNotasDesaprobadas;
+    int acumuladorNotasDesaprobadas=0;
+    int promedioDeAprobados;
+    int promedioDeDesaprobados;
+    int cantidadDeAprobados;
 
     if(nota>=notaMinima)
     {
@@ -74,15 +89,12 @@ int aprobarMateria (int notaMinima, int nota)
         contadorCantidadDeDesaprobados++;
         acumuladorNotasDesaprobadas=nota+acumuladorNotasDesaprobadas;
     }
+    int promedioDeAprobados;
+    int promedioDeDesaprobados;
+    int cantidadDeAprobados;
 
-    promedioDeAprobados=sacarPromedio(acumuladorNotasAprobadas, contadorCantidadDeAprobados);// promedio de aprobados
-    promedioDeDesaprobados=sacarPromedio(acumuladorNotasDesaprobadas, contadorCantidadDeDesaprobados);// promedio de desaprobados
-
-    return 0;
-
-}
-
-void ejercicioUno (void)
-{
+    promedioDeAprobados=sacarPromedio(acumuladorNotasAprobadas, contadorCantidadDeAprobados);
+    promedioDeDesaprobados=sacarPromedio(acumuladorNotasDesaprobadas, contadorCantidadDeDesaprobados);
+    cantidadDeAprobados=aprobarMateria(contadorCantidadAprobados);
 
 }
