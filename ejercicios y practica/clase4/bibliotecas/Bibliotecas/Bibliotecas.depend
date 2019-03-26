@@ -5,7 +5,14 @@
 
 1553604941 d:\florencia\primercuatrimestre\ejercicios y practica\clase4\bibliotecas\bibliotecas\ingresos.h
 
-1553604161 source:d:\florencia\primercuatrimestre\ejercicios y practica\clase4\bibliotecas\bibliotecas\main.c
+1553606314 source:d:\florencia\primercuatrimestre\ejercicios y practica\clase4\bibliotecas\bibliotecas\main.c
 	<stdio.h>
 	<stdlib.h>
+	"Ingresos.h"
+	"Recursividad.h"
+
+1553606305 d:\florencia\primercuatrimestre\ejercicios y practica\clase4\bibliotecas\bibliotecas\recursividad.h
+
+1553606265 source:d:\florencia\primercuatrimestre\ejercicios y practica\clase4\bibliotecas\bibliotecas\recursividad.c
+	"Recursividad.h"
 
