@@ -3,7 +3,8 @@ Hacer una calculadora. Para ello el programa iniciará y contará con un menú de o
 //(crear una funcion para el menu de opciones, utilizar un switch)
 //la idea del menu es mostar repetidamente el menu de opciones (usar un while/do while y un switch)
 //
-1. Ingresar 1er operando (A=x)//crear funcion para ingresar operandos//INGRESOS.H
+1. Ingresar 1er operando (A=x)//crear funcion para ingresar operandos//INGRESOS.H//SE USAN FLAGS. SE MUESTRA EL PRIMER
+OPERANDO Y DESPUES VUELVO A CARGAR EL MENU Y MUESTRO EL PRIMER OPERANDO INGRESADO. Y PONGO LA OPCION PARA QUE INGRSE UN SEGUNDO
 
 2. Ingresar 2do operando (B=y)//crear funcion para ingresar operandos//INGRESOS.H
 
