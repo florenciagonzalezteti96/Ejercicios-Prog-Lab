@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1553605002 source:d:\florencia\primercuatrimestre\ejercicios y practica\clase4\bibliotecas\bibliotecas\ingresos.c
+	<stdio.h>
+	"Ingresos.h"
+
+1553604941 d:\florencia\primercuatrimestre\ejercicios y practica\clase4\bibliotecas\bibliotecas\ingresos.h
+
+1553604161 source:d:\florencia\primercuatrimestre\ejercicios y practica\clase4\bibliotecas\bibliotecas\main.c
+	<stdio.h>
+	<stdlib.h>
+

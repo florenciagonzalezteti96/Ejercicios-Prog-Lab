@@ -3,7 +3,7 @@
 
 int pedirEntero (char []);
 
-int pedirEntero (char[])
+int pedirEntero (char texto[])
 {
     int unEntero;
 

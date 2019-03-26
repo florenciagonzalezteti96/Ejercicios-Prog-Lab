@@ -5,7 +5,7 @@ seimpre se docuemnta arriba de las funciones
 /*permite que el usuario ingrese un numero * \
  *
  * \un texto y la variable que se pide. El mensje a ser mostrado (que representa el parametro que tiene la funcion)
- * \ un entero. El numero ingresado.
+ * \ un entero. El numero ingresado. USO DOXYBLOCKS.
  *
  */
 
