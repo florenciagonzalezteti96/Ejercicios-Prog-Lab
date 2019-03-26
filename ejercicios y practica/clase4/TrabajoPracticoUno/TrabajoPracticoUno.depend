@@ -1,7 +1,10 @@
 # depslib dependency file v1.0
-1553608352 source:d:\florencia\primercuatrimestre\ejercicios y practica\clase4\trabajopracticouno\operaciones.c
+1553611810 source:d:\florencia\primercuatrimestre\ejercicios y practica\clase4\trabajopracticouno\operaciones.c
+	"Operaciones.h"
 
-1553610285 source:d:\florencia\primercuatrimestre\ejercicios y practica\clase4\trabajopracticouno\main.c
+1553611810 source:d:\florencia\primercuatrimestre\ejercicios y practica\clase4\trabajopracticouno\main.c
 	<stdio.h>
 	<stdlib.h>
+
+1553611826 d:\florencia\primercuatrimestre\ejercicios y practica\clase4\trabajopracticouno\operaciones.h
 

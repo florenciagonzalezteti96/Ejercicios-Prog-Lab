@@ -3,11 +3,11 @@ Hacer una calculadora. Para ello el programa iniciará y contará con un menú de o
 //(crear una funcion para el menu de opciones, utilizar un switch)
 //la idea del menu es mostar repetidamente el menu de opciones (usar un while/do while y un switch)
 //
-1. Ingresar 1er operando (A=x)//crear funcion para ingresar operandos
+1. Ingresar 1er operando (A=x)//crear funcion para ingresar operandos//INGRESOS.H
 
-2. Ingresar 2do operando (B=y)//crear funcion para ingresar operandos
+2. Ingresar 2do operando (B=y)//crear funcion para ingresar operandos//INGRESOS.H
 
-3. Calcular todas las operaciones
+3. Calcular todas las operaciones//se puede tomar como que hay que crear un menu aparte para las opciones a elegir.
 a) Calcular la suma (A+B)//funcion suma
 b) Calcular la resta (A-B)//funcion resta
 c) Calcular la division (A/B)//funcion division
@@ -22,6 +22,7 @@ d) “El resultado de A*B es: r”
 e) “El factorial de A es: r1 y El factorial de B es: r2”
 
 5. Salir
+
 • Todas las funciones matemáticas del menú se deberán realizar en una biblioteca aparte,
 que contenga las funciones para realizar las cinco operaciones.
 • En el menú deberán aparecer los valores actuales cargados en los operandos A y B
