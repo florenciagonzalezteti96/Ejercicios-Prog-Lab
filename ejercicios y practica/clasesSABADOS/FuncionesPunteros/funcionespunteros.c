@@ -24,12 +24,12 @@ int cambiarReferencia (int *dato)
 
 int pedirEdad(int *edad)
 {
-    int aux;
-    int retorno;
-    retorno = 0;
-    printf("Ingrese una edad:");
+    int aux;//creo una nueva variable
+    int retorno;//variable retorno para la validacion
+    retorno = 0;//declaro un valor inicial para la variable retorno
+    printf("Ingrese una edad:");//pido un dato
     //sePudo = scanf("%d", &aux);//el scanf retorna un entero que indica si se pudo o no hacer la operacion. (0 es negativo)
-    if(scanf("%d", &aux) == 1)
+    if(scanf("%d", &aux) == 1)//validacion --> si el scanf devuelve 1 no puede ingresar.
     {
         if(aux > 0 && aux <150)
         {
@@ -43,18 +43,20 @@ int pedirEdad(int *edad)
 
 }
 
-int dividir (int datoUno, int datoDos, float *resultado)
+int dividir (int datoUno, int datoDos, float *resultado)//EN EL PUNTERO SE GUARDA EL RESULTADO DE LA DIVISION
 {
-    int primerDato;
-    int segundoDato;
+    float aux;//esta variable me sirve para guardar la operacion que luego se lo paso como dato al puntero.
+    int retorno;
+    retorno = 0;
+    if(datoDos!=0)
+    {
+        aux=(float)datoUno/datoDos;//HAGO UN CASTEO DE UN INT A UN DATO FLOAT. SE LO INTERPRETA DE OTRA MANERA.
+        printf("%f",aux);
+        *resultado=aux;//TAMBIEN: *resultado=(float)datoUno/datoDos;
+        retorno = 1;//PORQUE PUDO HACER LA DIVISION.
+    }
 
-    printf("Ingrese un primer dato");
-    scanf("%d", &primerDato);
-    printf("Ingrese un segundo dato");
-    scanf("%d", &segundoDato);
-
-    resultado=primerDato/segundoDato;
-    scanf("%f", &resultado);
+    return retorno;
 
 }
 
