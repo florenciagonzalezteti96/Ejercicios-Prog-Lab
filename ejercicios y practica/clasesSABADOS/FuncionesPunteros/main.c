@@ -40,8 +40,20 @@ int main()
 
     int sePudo;
     float respuesta;
+    int primeraEdad;
+    int segundaEdad;
 
-    sePudo=dividir(15, 2, &respuesta);
+    while(pedirEdad(&primeraEdad)== 0)
+    {
+
+    }
+    while(pedirEdad(&segundaEdad)== 0)
+    {
+
+    } //while. si me devuelve 0 tengo que pedirla de nuevo.
+   //tambien while
+
+    sePudo=dividir(primeraEdad, segundaEdad, &respuesta);
 
     if(sePudo==1)
     {
@@ -50,12 +62,6 @@ int main()
     else{
         printf("No se pudo");
     }
-
-
-
-    return 0;
-
-
 
 
 }

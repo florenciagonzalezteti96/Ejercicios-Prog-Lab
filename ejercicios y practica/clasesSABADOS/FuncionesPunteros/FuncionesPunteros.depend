@@ -1,1 +1,11 @@
 # depslib dependency file v1.0
+1553956984 source:d:\florencia\primercuatrimestre\ejercicios y practica\clasessabados\funcionespunteros\funcionespunteros.c
+	"funcionespunteros.h"
+
+1553953805 d:\florencia\primercuatrimestre\ejercicios y practica\clasessabados\funcionespunteros\funcionespunteros.h
+
+1553958322 source:d:\florencia\primercuatrimestre\ejercicios y practica\clasessabados\funcionespunteros\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funcionespunteros.h"
+
