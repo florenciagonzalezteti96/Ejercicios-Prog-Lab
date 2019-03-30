@@ -46,7 +46,7 @@ int main()
     int opcion;
     int primerOperando;
     int segundoOperando;
-
+    int flag = 0
     char seguir = 's';
 
     do
@@ -59,6 +59,7 @@ int main()
             case 1:
             printf("Ingrese un primer operando: ");
             scanf("%d", &primerOperando);
+
             printf("Ingrese un segundo operando: ");
             scanf("%d", &segundoOperando);
 
@@ -78,7 +79,7 @@ int main()
             break;
 
             default:
-            printf("\nNo ingreso una opcion valida");
+            printf("\nNo ingreso una opcion valida\n");
             break;
         }
 
