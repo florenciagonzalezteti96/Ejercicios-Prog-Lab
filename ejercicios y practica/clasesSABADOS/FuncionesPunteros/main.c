@@ -18,17 +18,17 @@ int main()
     cambiarReferencia (&sueldo);
     printf(" por referencia :%d", sueldo);
 
-*/
+----------------------------------*
 
     int miEdad;
 
-    while(pedirEdad(&miEdad)==1)
+    while(pedirEdad(&miEdad)==0)
     {
 
     }
     printf("Su edad es %d", miEdad);
-
-    /*if(pedirEdad(&miEdad)==1)
+-------------------------------------------
+    *if(pedirEdad(&miEdad)==1)
     {
             printf("Su edad es %d", miEdad);
     }
@@ -36,5 +36,10 @@ int main()
     {
         printf("No se pudo");
     }*/
+
+    int primerNumero;
+    int segundoNumero;
+
+
 
 }

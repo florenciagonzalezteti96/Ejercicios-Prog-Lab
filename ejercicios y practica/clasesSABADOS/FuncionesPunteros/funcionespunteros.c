@@ -3,9 +3,10 @@ void verSiAnda(void);
 int cambiarValor (int dato);
 int cambiarReferencia (int *dato);//los resultados se muestran por punteros!!
 int pedirEdad(int *edad);
+int dividir (int datoUno, int datoDos, float *resultado);
 
 
-void verSiAnda()
+void verSiAnda(void)
 {
     printf("Funciona");
 }
@@ -41,3 +42,20 @@ int pedirEdad(int *edad)
 
 
 }
+
+int dividir (int datoUno, int datoDos, float *resultado)
+{
+    int primerDato;
+    int segundoDato;
+
+    printf("Ingrese un primer dato");
+    scanf("%d", &primerDato);
+    printf("Ingrese un segundo dato");
+    scanf("%d", &segundoDato);
+
+    resultado=primerDato/segundoDato;
+    scanf("%f", &resultado);
+
+}
+
+
