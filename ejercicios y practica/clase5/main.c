@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #define T 5 //defino un valor que no se modifica. pero no esta en memoria, asi que no toma tiempo del procesador.
 void recibirVector(int vectorRecibido[], int cantidadElementos);
+void mostrarVector (int vectorRecibido[], int cantidadElementos);
+int buscarMaximo (int vectorRecibido[], int cantidadElementos);
+int devolverEntero (int vectorRecibido[], int cantidadElementos, int valor);
 
 int main()
 {
@@ -27,35 +30,96 @@ int main()
     }
     printf("%d", numeros [2]);*/
     int numeros [T];
+    int i;
+    int maximo;
+    int valorParaBuscar;
+    int indiceDelValorParaBuscar;
 
-    recibirVector(numeros);
-    mostrarVector(recibirVector(numeros));
+    recibirVector(numeros, T);
+    mostrarVector(numeros, T);
+
+    maximo = buscarMaximo(numeros, T);
+
+    printf("\n el maximo es %d", maximo);
+
+    indiceDelValorParaBuscar=devolverEntero(numeros, T, valorParaBuscar);
+
+    printf("\nEl indice del valor ingresado para buscar es %d", indiceDelValorParaBuscar);
+
+
+
 
 
     return 0;
 }
 
-void recibirVector(int vectorRecibido, T)
+void recibirVector(int vectorRecibido [], int cantidadElementos)
 {
     int i;
 
-    for(i=0; i<; i++)
+    for(i=0; i<cantidadElementos; i++)
     {
         printf("Ingrese un numero:");
+        scanf("%d", &vectorRecibido[i]);
+
     }
 
-    return 0;
 }
 
-void mostrarVector (int vectorAMostrar);
+void mostrarVector (int vectorAMostrar[], int cantidadElementos)
 {
     int i;
 
-    for (i=0; i<5; i++)
+    for (i=0; i<cantidadElementos; i++)
     {
         printf("%d", vectorAMostrar[i]);
     }
-    return 0;
+
 }
+
+int buscarMaximo (int vectorRecibido[], int cantidadElementos)
+{
+    int i;
+    int bandera = 0;
+    int maximo;
+
+    for (i=0; i<cantidadElementos; i++)
+    {
+        if(bandera == 0 || vectorRecibido[i]>maximo)
+        {
+            maximo = vectorRecibido[i];
+
+            bandera = 1;
+
+        }
+
+    }
+
+    return maximo;
+
+}
+
+int devolverEntero (int vectorRecibido[], int cantidadElementos, int valor)
+{
+    int i;
+    int valorABuscar;
+
+    for(i=0; i<cantidadElementos; i++)//ingresamos valores al vector.
+    {
+        printf("Ingrese un numero:");
+        scanf("%d", &vectorRecibido[i]);
+
+        if(valorABuscar==vectorRecibido[i])
+        {
+            printf("\No se encontro el numero");
+        }
+        else{}
+    }
+
+    return &valorABuscar;
+
+}
+
+
 
 
