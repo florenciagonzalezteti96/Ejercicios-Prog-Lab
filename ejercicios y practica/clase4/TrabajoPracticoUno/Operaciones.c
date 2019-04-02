@@ -36,7 +36,7 @@ int dividirOperandos(int x, int y)
     }
     else
     {
-        division = printf("La division por cero no es posible. Ingrese un nuevo segundo operando.");
+        printf("La division por cero no es posible. Ingrese un nuevo segundo operando.");
     }
 
     return division;
