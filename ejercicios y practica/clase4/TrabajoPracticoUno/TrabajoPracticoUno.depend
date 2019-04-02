@@ -8,16 +8,17 @@
 
 1553947710 d:\florencia\primercuatrimestre\ejercicios y practica\clase4\trabajopracticouno\operaciones.h
 
-1554230927 source:c:\users\gonzalez\desktop\programacionuno\ejercicios y practica\clase4\trabajopracticouno\operaciones.c
+1554242589 source:c:\users\gonzalez\desktop\programacionuno\ejercicios y practica\clase4\trabajopracticouno\operaciones.c
 	<stdio.h>
 	<stdlib.h>
 	"Operaciones.h"
 
-1554229419 c:\users\gonzalez\desktop\programacionuno\ejercicios y practica\clase4\trabajopracticouno\operaciones.h
+1554242599 c:\users\gonzalez\desktop\programacionuno\ejercicios y practica\clase4\trabajopracticouno\operaciones.h
 
-1554240001 source:c:\users\gonzalez\desktop\programacionuno\ejercicios y practica\clase4\trabajopracticouno\main.c
+1554242589 source:c:\users\gonzalez\desktop\programacionuno\ejercicios y practica\clase4\trabajopracticouno\main.c
 	<stdio.h>
 	<stdlib.h>
+	"Operaciones.h"
 
 1554232386 source:c:\users\gonzalez\desktop\programacionuno\ejercicios y practica\clase4\trabajopracticouno\ingresoyvalidaciones.c
 

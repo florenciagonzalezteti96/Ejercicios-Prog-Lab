@@ -35,12 +35,20 @@ que contenga las funciones para realizar las cinco operaciones.
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "Operaciones.h"
 
 int main()
 {
     int opcion;
     int primerOperando;
     int segundoOperando;
+    int sumar;
+    int restar;
+    int dividir;
+    int multiplicar;
+    int factorizarPrimerOperando;
+    int factorizarSegundoOperando;
+
     //int flag = 0;
     char seguir = 's';
 
@@ -75,7 +83,7 @@ int main()
 
             case 3:
 
-            printf("\nLas operaciones a realizar son:");
+            printf("\nLas operaciones a realizar son:\n");
             printf("\nLa suma total de los operandos es: %d + %d", primerOperando, segundoOperando);
             printf("\nLa resta total de los operandos es: %d - %d", primerOperando, segundoOperando);
             printf("\nLa division total de los operandos es: %d / %d", primerOperando, segundoOperando);
@@ -83,30 +91,34 @@ int main()
             printf("\nEl factorial del primer operando es: !%d", primerOperando);
             printf("\nEl factorial del segundo operando es: !%d", segundoOperando);
 
+            sumar=sumarOperandos(primerOperando,segundoOperando);
+            restar=restarOperandos(primerOperando,segundoOperando);
+            dividir=dividirOperandos(primerOperando,segundoOperando);
+            multiplicar=multiplicarOperandos(primerOperando,segundoOperando);
+            factorizarPrimerOperando=calcularFactorialDeOperando(primerOperando);
+            factorizarSegundoOperando=calcularFactorialDeOperando(segundoOperando);
+
                 break;
 
             case 4:
 
-
+            printf("\nInforme de los resultados:\nLa suma es %d\nLa resta es %d\nLa division es %d\nLa multiplicacion es %d\nEl factorial del primer operando es %d\nEl factorial del segundo operando es %d\n",sumar,restar,dividir,multiplicar,factorizarPrimerOperando,factorizarSegundoOperando);
 
                 break;
 
             case 5:
-            printf("Estoy saliendo ");
+            printf("\nHa salido de la calculadora.\n");
             seguir='n';
-            break;
+                break;
 
             default:
             printf("\nNo ingreso una opcion valida\n");
-            break;
+                break;
         }
 
-        //system("pause");
-        //
     }while(seguir=='s');
 
     system("cls");
-
 
     return 0;
 }
