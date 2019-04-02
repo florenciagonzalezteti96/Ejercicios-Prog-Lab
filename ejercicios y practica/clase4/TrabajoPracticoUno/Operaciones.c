@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "Operaciones.h"
 //A = X
 //B = Y
@@ -21,7 +23,6 @@ int sumarOperandos(int x, int y)
 int restarOperandos(int x, int y)
 {
     int restar;
-
     restar = x-y;
 
     return restar;
@@ -31,7 +32,14 @@ int dividirOperandos(int x, int y)
 {
     int dividir;
 
-    dividir = x/y;
+    if(y == 0)
+    {
+        printf("La division por cero no es posible. Ingrese un nuevo segundo operando.");
+    }
+    else
+    {
+        dividir = x/y;
+    }
 
     return dividir;
 }

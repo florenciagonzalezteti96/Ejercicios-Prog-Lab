@@ -36,44 +36,62 @@ que contenga las funciones para realizar las cinco operaciones.
 #include <stdio.h>
 #include <stdlib.h>
 
-int pedirEntero (char []);
-
 int main()
 {
-    //variable opcionesQueEligeElUsuario
-    //variable seguir --> no preguntar
-
     int opcion;
     int primerOperando;
     int segundoOperando;
-    int flag = 0
+    //int flag = 0;
     char seguir = 's';
 
     do
     {
-        printf("Elija una opcion: \n1.Ingreso de operandos \n2.Eleccion de las operaciones de realizar \n3.Informe de los resultados de las operaciones \n4.Cerrar calculadora\n");//se puede crear una funcion que cree el menu, o un printf para cada opcion o que quede asi
+        printf("Elija una opcion: \n1.Ingresar primer operando. \n2.Ingresar segundo operando. \n3.Informe de las operaciones a realizar \n4.Informe de los resultados de las operacioes\n5.Salir de la calculadora.\n");//se puede crear una funcion que cree el menu, o un printf para cada opcion o que quede asi
         scanf("%d", &opcion);
 
         switch(opcion)
         {
             case 1:
+
             printf("Ingrese un primer operando: ");
             scanf("%d", &primerOperando);
+
+
+            printf("\nEl primer operando ingresado es %d\n", primerOperando);
+
+
+                break;
+
+            case 2:
+
 
             printf("Ingrese un segundo operando: ");
             scanf("%d", &segundoOperando);
 
-            break;
+            printf("\nEl primer operando ingresado es %d\n", primerOperando);
+            printf("\nEl segundo operando ingresado es %d\n", segundoOperando);
 
-            case 2:
-            printf("Estoy dando de baja ");
-            break;
+                break;
 
             case 3:
-            printf("Estoy informando");
-            break;
+
+            printf("\nLas operaciones a realizar son:");
+            printf("\nLa suma total de los operandos es: %d + %d", primerOperando, segundoOperando);
+            printf("\nLa resta total de los operandos es: %d - %d", primerOperando, segundoOperando);
+            printf("\nLa division total de los operandos es: %d / %d", primerOperando, segundoOperando);
+            printf("\nLa multiplicacion total de los operandos es: %d * %d", primerOperando, segundoOperando);
+            printf("\nEl factorial del primer operando es: !%d", primerOperando);
+            printf("\nEl factorial del segundo operando es: !%d", segundoOperando);
+
+                break;
 
             case 4:
+
+
+
+                break;
+
+            case 5:
             printf("Estoy saliendo ");
             seguir='n';
             break;
@@ -84,10 +102,10 @@ int main()
         }
 
         //system("pause");
-        //system("cls");
-
+        //
     }while(seguir=='s');
 
+    system("cls");
 
 
     return 0;
