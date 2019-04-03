@@ -31,9 +31,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="IngresoYValidaciones.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Operaciones.c">
 			<Option compilerVar="CC" />
 		</Unit>

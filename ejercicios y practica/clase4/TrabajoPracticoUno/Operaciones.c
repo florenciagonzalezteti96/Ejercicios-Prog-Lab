@@ -3,55 +3,47 @@
 #include "Operaciones.h"
 //A = X
 //B = Y
-int sumarOperandos (int x, int y);
-int restarOperandos (int x, int y);
-int dividirOperandos (int x, int y);
-int multiplicarOperandos (int x, int y);
-int calcularFactorialDeOperando (int x);
+float sumarOperandos (float, float);
+float restarOperandos (float, float);
+float dividirOperandos (float, float);
+float multiplicarOperandos (float, float);
+float calcularFactorialDeOperando (float);
 
-int sumarOperandos(int x, int y)
+float sumarOperandos (float x, float y)
  {
-     int sumar;
+     float sumar;
 
      sumar = x+y;
 
      return sumar;
  }
 
-int restarOperandos(int x, int y)
+float restarOperandos (float x, float y)
 {
-    int restar;
+    float restar;
     restar = x-y;
 
     return restar;
 }
 
-int dividirOperandos(int x, int y)
+float dividirOperandos (float x, float y)
 {
     float division;
-
-    if(y != 0)
-    {
-        division = (float)x/y;
-    }
-    else
-    {
-        printf("La division por cero no es posible. Ingrese un nuevo segundo operando.");
-    }
+    division = (float)x/y;
 
     return division;
 }
 
-int multiplicarOperandos (int x, int y)
+float multiplicarOperandos (float x, float y)
 {
-    int multiplicar;
+    float multiplicar;
 
     multiplicar = x*y;
 
     return multiplicar;
 }
 
-int calcularFactorialDeOperando (int x)
+float calcularFactorialDeOperando (float x)
 {
     int resultadoDeFactorizacionDeOperando;
 

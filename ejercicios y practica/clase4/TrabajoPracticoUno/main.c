@@ -39,53 +39,39 @@ que contenga las funciones para realizar las cinco operaciones.
 
 int main()
 {
-    int opcion;
-    int primerOperando;
-    int segundoOperando;
-    int sumar;
-    int restar;
-    int dividir;
-    int multiplicar;
-    int factorizarPrimerOperando;
-    int factorizarSegundoOperando;
-    int flag = 0;
-    int flagDos = 0;
-
-    char seguir = 's';
+    int opcion;//Menu principal. Le muestra al usuario todas las opciones para ingresar o recibir datos.
+    int flag = 0;//Bandera para validar si el usuario ingreso un primer operando o no.
+    int flagDos = 0;//Bandera para validar si el usuario ingreso un segundo operando o no.
+    int primerOperando;//primer numero ingresado.
+    int segundoOperando;//segundo numero ingresado.
+    float sumar;//variable que guarda el resultado de la funcion llamada sumarOperandos.
+    float restar;//variable que guarda el resultado de la funcion llamada restarOperandos.
+    float dividir;//variable que guarda el resultado de la funcion llamada dividirOperandos.
+    float multiplicar;//variable que guarda el resultado de la funcion llamada multiplicarOperandos.
+    float factorizarPrimerOperando;//variable que guarda el resultado de la funcion llamada calcularFactorialDeOperando.
+    float factorizarSegundoOperando;//variable que guarda el resultado de la funcion llamada calcularFactorialDeOperando.
+    char seguir = 's';//cierre de la funcion do while.
 
     do
     {
         printf("Elija una opcion: \n1.Ingresar primer operando. \n2.Ingresar segundo operando. \n3.Informe de las operaciones a realizar \n4.Informe de los resultados de las operacioes\n5.Salir de la calculadora.\n");//se puede crear una funcion que cree el menu, o un printf para cada opcion o que quede asi
         scanf("%d", &opcion);
 
-        if(flag == 0)
-        {
-            printf("\nIngrese un primer operando!\n");
-        }
-        if(flagDos == 0)
-        {
-            printf("\nIngrese un segundo operando!\n");
-        }
-
-
-        switch(opcion)
+        switch(opcion)//menu de opciones
         {
             case 1:
-
-            printf("Ingrese un primer operando:\n");
+            //ingreso del primer operando
+            printf("\nIngrese un primer operando:\n");
             scanf("%d", &primerOperando);
             flag = 1;
 
-
             printf("\nEl primer operando ingresado es %d\n", primerOperando);
-
 
                 break;
 
             case 2:
-
-
-            printf("Ingrese un segundo operando:\n");
+            //ingreso del segundo operando
+            printf("\nIngrese un segundo operando:\n");
             scanf("%d", &segundoOperando);
             flagDos = 1;
 
@@ -94,36 +80,61 @@ int main()
                 break;
 
             case 3:
+            //validacion del ingreso de los operandos
+            if(flag == 0)
+            {
+                printf("\nIngrese un primer operando!\n");
+            }
+            else
+            {
+                if(flagDos == 0)
+                {
+                    printf("\nIngrese un segundo operando!\n");
+                }
+                else
+                {   //muestro las operaciones a realizar y calculo los resultados.
+                    printf("\nLas operaciones a realizar son:\n");
+                    printf("\nLa suma sera: %d + %d", primerOperando, segundoOperando);
+                    printf("\nLa resta sera: %d - %d", primerOperando, segundoOperando);
+                    printf("\nLa division sera: %d / %d", primerOperando, segundoOperando);
+                    printf("\nLa multiplicacion sera: %d * %d", primerOperando, segundoOperando);
+                    printf("\nEl factorial del primer operando sera: !%d", primerOperando);
+                    printf("\nEl factorial del segundo operando sera: !%d", segundoOperando);
 
-            printf("\nLas operaciones a realizar son:\n");
-            printf("\nLa suma total de los operandos es: %d + %d", primerOperando, segundoOperando);
-            printf("\nLa resta total de los operandos es: %d - %d", primerOperando, segundoOperando);
-            printf("\nLa division total de los operandos es: %d / %d", primerOperando, segundoOperando);
-            printf("\nLa multiplicacion total de los operandos es: %d * %d", primerOperando, segundoOperando);
-            printf("\nEl factorial del primer operando es: !%d", primerOperando);
-            printf("\nEl factorial del segundo operando es: !%d", segundoOperando);
+                    sumar = sumarOperandos(primerOperando,segundoOperando);
+                    restar = restarOperandos(primerOperando,segundoOperando);
+                    //validacion de la division (en caso de que el usuario haya ingresado 0 como divisor)
+                    if(segundoOperando == 0)
+                    {
+                        printf("La division por cero no es posible. Ingrese un nuevo segundo operando!");
+                    }
+                    else
+                    {
+                        dividir = dividirOperandos(primerOperando,segundoOperando);
+                    }
 
-            sumar=sumarOperandos(primerOperando,segundoOperando);
-            restar=restarOperandos(primerOperando,segundoOperando);
-            dividir=dividirOperandos(primerOperando,segundoOperando);
-            multiplicar=multiplicarOperandos(primerOperando,segundoOperando);
-            factorizarPrimerOperando=calcularFactorialDeOperando(primerOperando);
-            factorizarSegundoOperando=calcularFactorialDeOperando(segundoOperando);
+                    multiplicar = multiplicarOperandos(primerOperando,segundoOperando);
+                    factorizarPrimerOperando = calcularFactorialDeOperando(primerOperando);
+                    factorizarSegundoOperando = calcularFactorialDeOperando(segundoOperando);
+                }
+            }
 
                 break;
 
             case 4:
-
-            printf("\nInforme de los resultados:\nLa suma es %d\nLa resta es %d\nLa division es %d\nLa multiplicacion es %d\nEl factorial del primer operando es %d\nEl factorial del segundo operando es %d\n",sumar,restar,dividir,multiplicar,factorizarPrimerOperando,factorizarSegundoOperando);
+            //informo los resultados finales.
+            printf("\nInforme de los resultados:\nLa suma es %f\nLa resta es %f\nLa division es %f\nLa multiplicacion es %f\nEl factorial del primer operando es %f\nEl factorial del segundo operando es %f\n",sumar,restar,dividir,multiplicar,factorizarPrimerOperando,factorizarSegundoOperando);
 
                 break;
 
             case 5:
+            //salida del programa.
             printf("\nHa salido de la calculadora.\n");
             seguir='n';
                 break;
 
             default:
+            //ingreso de una opcion que no existe en el menu.
             printf("\nNo ingreso una opcion valida\n");
                 break;
         }
