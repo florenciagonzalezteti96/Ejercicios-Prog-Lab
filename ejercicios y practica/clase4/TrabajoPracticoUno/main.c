@@ -48,8 +48,9 @@ int main()
     int multiplicar;
     int factorizarPrimerOperando;
     int factorizarSegundoOperando;
+    int flag = 0;
+    int flagDos = 0;
 
-    //int flag = 0;
     char seguir = 's';
 
     do
@@ -57,12 +58,23 @@ int main()
         printf("Elija una opcion: \n1.Ingresar primer operando. \n2.Ingresar segundo operando. \n3.Informe de las operaciones a realizar \n4.Informe de los resultados de las operacioes\n5.Salir de la calculadora.\n");//se puede crear una funcion que cree el menu, o un printf para cada opcion o que quede asi
         scanf("%d", &opcion);
 
+        if(flag == 0)
+        {
+            printf("\nIngrese un primer operando!\n");
+        }
+        if(flagDos == 0)
+        {
+            printf("\nIngrese un segundo operando!\n");
+        }
+
+
         switch(opcion)
         {
             case 1:
 
-            printf("Ingrese un primer operando: ");
+            printf("Ingrese un primer operando:\n");
             scanf("%d", &primerOperando);
+            flag = 1;
 
 
             printf("\nEl primer operando ingresado es %d\n", primerOperando);
@@ -73,10 +85,10 @@ int main()
             case 2:
 
 
-            printf("Ingrese un segundo operando: ");
+            printf("Ingrese un segundo operando:\n");
             scanf("%d", &segundoOperando);
+            flagDos = 1;
 
-            printf("\nEl primer operando ingresado es %d\n", primerOperando);
             printf("\nEl segundo operando ingresado es %d\n", segundoOperando);
 
                 break;
