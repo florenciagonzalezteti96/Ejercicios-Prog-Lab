@@ -6,15 +6,15 @@
 int main()
 {
     int edad;
-    int seCargo;
 
-    do
+    if(dameEdadConContador(&edad, "Ingrese edad:", 3) == 0)
     {
-        seCargo = dameEdadTres(&edad, "Ingrese una edad");
+        printf("Valor incorrecto.");
     }
-    while(seCargo == 0);
-
-    printf("Su edad es %d", edad);
+    else
+    {
+        printf("La edad es %d", edad);
+    }
 
     /*if (dameEdadDos(&edad, "Ingrese una edad") == 1)//PARA VALIDAR SI ES UN ENTERO O NO -->segunda y tercera funcion.
     {

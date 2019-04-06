@@ -30,6 +30,8 @@ int dameEdadTres(int *edad, char *mensaje);
  *
  */
 
+int dameEdadConContador(int *edad, char *mensaje, int contadorDeIntentos);
+
 
 //-------------------------------------------
 int dameEdad(int *edad, char *mensaje)
@@ -56,7 +58,7 @@ int dameEdadDos(int *edad, char *mensaje)
     char cadenaCargada [20]; //puntero memoria --> char [];
     printf(mensaje);
     sePudo = scanf("%s", cadenaCargada);//para asignar un valor
-    *edad = atoi (cadenaCargada);//RECIBE UNA CADENA Y DEVUELVE UN ENTERO
+    *edad = atoi (cadenaCargada);//RECIBE UNA CADENA Y LA CONVIERTE A UN ENTERO --> int atoi(const char *str). Si no pudo convertir a un entero devuelve 0
 
     /*
     CON EL ATOI SE PUEDE VALIDAR SI ES UN NUMERO O NO.
@@ -65,6 +67,7 @@ int dameEdadDos(int *edad, char *mensaje)
 
     return sePudo;
 }
+
 int dameEdadTres(int *edad, char *mensaje)
 {
     int sePudo = 1;
@@ -87,4 +90,27 @@ int dameEdadTres(int *edad, char *mensaje)
 
     return sePudo;
 }
+int dameEdadConContador(int *edad, char *mensaje, int intentos)
+{
+    int retorno;
+    int seCargo;
+    int contadorDeIntentos = 0;
 
+    do
+    {
+        seCargo = dameEdadTres(edad, mensaje);
+        contadorDeIntentos++;
+    }
+    while(seCargo == 0 && contadorDeIntentos<intentos);
+
+    if(contadorDeIntentos>intentos || seCargo == 0)
+    {
+        retorno = 0;
+    }
+    else
+    {
+        retorno = 1;
+    }
+
+    return retorno;
+}
