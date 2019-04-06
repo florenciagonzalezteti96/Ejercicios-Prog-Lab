@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1554559388 source:d:\florencia\ejercicios y practica\clasessabados\clasesabadosdos\funciones.c
+1554560687 source:d:\florencia\ejercicios y practica\clasessabados\clasesabadosdos\funciones.c
 	"Funciones.h"
 
 1554559631 d:\florencia\ejercicios y practica\clasessabados\clasesabadosdos\funciones.h
 
-1554559473 source:d:\florencia\ejercicios y practica\clasessabados\clasesabadosdos\main.c
+1554560609 source:d:\florencia\ejercicios y practica\clasessabados\clasesabadosdos\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

@@ -10,9 +10,11 @@ int main()
 
     do
     {
-        seCargo =(dameEdadTres(&edad, "Ingrese una edad") == 1);
+        seCargo = dameEdadTres(&edad, "Ingrese una edad");
     }
     while(seCargo == 0);
+
+    printf("Su edad es %d", edad);
 
     /*if (dameEdadDos(&edad, "Ingrese una edad") == 1)//PARA VALIDAR SI ES UN ENTERO O NO -->segunda y tercera funcion.
     {
