@@ -31,6 +31,15 @@ int dameEdadTres(int *edad, char *mensaje);
  */
 
 int dameEdadConContador(int *edad, char *mensaje, int contadorDeIntentos);
+/** \brief Esta funcion me permite realizar una validacion de la cadena de caracteres ingresados (que sean todos enteros) y agregar un contador de intentos para ingresar los valores.
+ *
+ * \param edad int* valores ingresados
+ * \param mensaje char* mensaje que indica el ingreso de valores al usuario
+ * \param contadorDeIntentos int variable que indica el numero de intentos que tiene el usuario para ingresar.
+ * \return int Regresa 0 si llego al limite de intentos o si el ingreso no fue valido, 1 si llego a ingresar antes del limite o si el dato ingresado se pudo validar.
+ *
+ */
+
 
 
 //-------------------------------------------
@@ -98,7 +107,7 @@ int dameEdadConContador(int *edad, char *mensaje, int intentos)
 
     do
     {
-        seCargo = dameEdadTres(edad, mensaje);
+        seCargo = dameEdadTres(edad, mensaje);//llamo a la funcion para validar la cadena de caracteres.
         contadorDeIntentos++;
     }
     while(seCargo == 0 && contadorDeIntentos<intentos);

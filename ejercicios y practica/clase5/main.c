@@ -111,7 +111,7 @@ int devolverEntero (int vectorRecibido[], int cantidadElementos, int valor)
 
         if(valorABuscar==vectorRecibido[i])
         {
-            printf("\No se encontro el numero");
+            printf("\nNo se encontro el numero\n");
         }
         else{}
     }
