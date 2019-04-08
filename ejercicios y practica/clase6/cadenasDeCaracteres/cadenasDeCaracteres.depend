@@ -1,5 +1,6 @@
 # depslib dependency file v1.0
-1554728758 source:d:\florencia\ejercicios y practica\clase6\cadenasdecaracteres\main.c
+1554734220 source:d:\florencia\ejercicios y practica\clase6\cadenasdecaracteres\main.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 
