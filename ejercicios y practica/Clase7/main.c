@@ -15,6 +15,8 @@ int main()
     char apellidoYNombre[41]="";//-->me aseguro que la variable esta vacia y no me tire basura.
     int i = 0;
 
+
+
     pedirCadena("nombre: ", nombre, 20);
     pedirCadena("apellido: ", apellido, 20);
 
@@ -42,7 +44,6 @@ int main()
         i++;
     }
 
-    puts(apellidoYNombre);
 
 
     return 0;
