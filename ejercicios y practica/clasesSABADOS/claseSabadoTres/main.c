@@ -8,19 +8,20 @@
 //SI USO EL ATOI O EL ATOF DEPENDE DE QUE TIPO DE DATO QUIERO GUARDAR. SI QUIERO GUARDAR INT, ATOI. SI QUIERO GUARDAR FLOAT, ATOF.
 typedef struct
 {
-    float precios[TAM];
+    float precio;
     char codigo[TAM][7];
 
 }Producto;
 
 int main()
 {
-    float precios;
-    char codigo[7];
+    float precios[TAM];
+    char codigo[TAM][7];
     //char [7][TAM];-->NO!
-    Producto unProducto;
+    Producto unProducto;//Este tiene un producto. Aca puedo acceder al precio de UN producto.
+    Producto ConjuntoDeProductos[TAM];//Este conjunto tiene varios productos. Aca puedo acceder al precio de diferentes productos.
     int i;
-    //int j;
+    int j;
     int respuesta;
     char ingreso[7];
     printf("Ingrese cadena:\n");
@@ -34,11 +35,11 @@ int main()
 
     for(i=0; i<TAM; i++)
     {
-        while (getPrecio("Ingrese un precio:\n", &unProducto[i].precios)==0)
+        while (getPrecio("Ingrese un precio:\n", &ConjuntoDeProductos[i].precio)==0)
         {
             printf("Error. Reingrese!\n");
         }
-        while (getCodigo("Ingrese un codigo:\n", unProducto[i].codigo)==0)
+        while (getCodigo("Ingrese un codigo:\n", ConjuntoDeProductos[i].codigo)==0)
         {
             printf("Error. Reingrese!\n");
         }
@@ -46,21 +47,25 @@ int main()
 
     for(i=0; i<TAM; i++)
     {
-        printf("el precio es %f\n", unProducto.precios);
-        printf("el codigo es %s\n", unProducto.codigo);
+        printf("el precio es %f\n", ConjuntoDeProductos[i].precio);//quiero mostrar por indice.
+        printf("el codigo es %s\n", ConjuntoDeProductos[i].codigo);
     }
-    /*for(i=0;i<TAM - 1;i++)
+    for(i=0;i<TAM - 1;i++)
     {
         for(j=1;j<TAM;j++)
         {
-            if(precios[i]>precios[j])
+            if(ConjuntoDeProductos[i].precio<ConjuntoDeProductos[j].precio)
             {
                 int aux;
-                aux = precio[i];
-                precio [i] = precio [j];
-                precio [j] =  aux;
+                aux = ConjuntoDeProductos[i];
+                ConjuntoDeProductos [i] = ConjuntoDeProductos [j];
+                ConjuntoDeProductos [j] =  aux;
             }
         }
-    }*///SWAP.
+    }
+
+    printf("El orden es:\nCodigo: %s Precio %f", ConjuntoDeProductos[i].codigo, ConjuntoDeProductos[i].precio);
+
+
     return 0;
 }
