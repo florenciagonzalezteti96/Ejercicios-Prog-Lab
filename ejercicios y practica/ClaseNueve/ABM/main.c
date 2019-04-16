@@ -6,7 +6,8 @@
 
 
 
-void modificarSueldoBrutoDeEmpleado (eEmpleado lista[], int tam);
+void modificarDatoDeEmpleado(eEmpleado lista[], int tam);
+int buscarLegajo(eEmpleado lista[], int tam, int legajo);
 int menuDeOpciones(char[]);
 
 
@@ -34,7 +35,7 @@ hardcodearDatosEmpleados(lista,4);
                 mostrarListaEmpleados(lista, T);
                 break;
             case 3:
-                modificarSueldoBrutoDeEmpleado(lista, T);
+                modificarDatoDeEmpleado(lista, T);
                 break;
 
         }
@@ -67,21 +68,40 @@ void modificarDatoDeEmpleado(eEmpleado lista[], int tam)
 
     printf("Ingrese el legajo del empleado para modificar su sueldo bruto: \n");
     scanf("%d", &legajo);
-    /*if(scanf("%d", &legajo)==0)
-    {
-        printf("Dato ingresado es incorrecto, introduzca de nuevo el legajo: \n");
-        scanf("%d", &legajo);
-    }*/
 
     for(i=0; i<tam; i++)
     {
         if(legajo == lista[i].legajo)
         {
             printf("Ingrese el nuevo sueldo bruto: ");
-            scanf("%d", &nuevoSueldoBruto);
+            scanf("%d", &nuevoDato);
             lista[i].sueldoBruto = nuevoDato;
             lista[i].sueldoNeto = nuevoDato * 0.85;
             //printf("El nuevo sueldo bruto es: %d\n", lista[i].sueldoBruto);
         }
     }
+}
+
+// darBajaAEmpleado
+int darBaja (eEmpleado)
+
+
+// modificarDatoDeEmpleado
+
+int buscarLegajo(eEmpleado lista[], int tam, int legajo)
+{
+    int encontroLegajo = 0;
+
+    printf("Ingrese el legajo del empleado para modificar su sueldo bruto: \n");
+    scanf("%d", &legajo);
+
+    for(i=0; i<tam; i++)
+    {
+        if(legajo == lista[i].legajo)
+        {
+            encontroLegajo = 1;
+        }
+    }
+
+    return encontroLegajo;
 }
