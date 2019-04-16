@@ -83,12 +83,22 @@ void modificarDatoDeEmpleado(eEmpleado lista[], int tam)
 }
 
 // darBajaAEmpleado
-int darBaja (eEmpleado)
+int darBaja (eEmpleado lista[], int tam, int legajo)
+{
+    int empleado;
 
+    empleado = buscarLegajo(lista[], tam, legajo)
 
+    if(empleado == 0)
+    {
+
+    }
+}
+
+int pedirLegajo()
 // modificarDatoDeEmpleado
 
-int buscarLegajo(eEmpleado lista[], int tam, int legajo)
+int buscarLegajo(eEmpleado lista[], int tam, int legajo) //-->NO! TIENE QUE DEVOLVER UN INDICE.
 {
     int encontroLegajo = 0;
 
