@@ -1,4 +1,3 @@
-
 #include "Empleado.h"
 
 
@@ -78,9 +77,9 @@ void hardcodearDatosEmpleados(eEmpleado lista[], int tam)
 {
     int i;
     int legajos[]={1,8,9,7,2,4};
-    char nombres[][50]={"Maria","Pedro","Jose","Pedro","Pablo","Mateo"};
+    char nombres[][50]={"Maria","Carlos","Jose","Carlos","Pablo","Mateo"};
     char sexo[]={'F','M','M','M','M','M'};
-    float sueldosBruto[]={1000,2000,3000,4000,5000,6000};
+    float sueldosBruto[]={1000,20000,3000,20000,5000,20000};
 
     for(i=0; i<tam; i++)
     {
