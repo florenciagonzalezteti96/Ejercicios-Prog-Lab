@@ -24,3 +24,18 @@
 	"Empleado.h"
 	<string.h>
 
+1556538099 source:d:\florencia\primercuatrimestre\ejercicios y practica\clasediez\abm uno a muchos\do.c
+
+1556542864 source:d:\florencia\primercuatrimestre\ejercicios y practica\clasediez\abm uno a muchos\main.c
+	<stdlib.h>
+	"Empleado.h"
+
+1556544329 d:\florencia\primercuatrimestre\ejercicios y practica\clasediez\abm uno a muchos\empleado.h
+	<stdio.h>
+
+1556544567 source:d:\florencia\primercuatrimestre\ejercicios y practica\clasediez\abm uno a muchos\empleado.c
+	<stdlib.h>
+	<stdlib.h>
+	"Empleado.h"
+	<string.h>
+

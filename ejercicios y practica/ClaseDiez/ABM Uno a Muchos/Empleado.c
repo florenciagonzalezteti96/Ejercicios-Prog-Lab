@@ -7,8 +7,8 @@
 void cargarEmpleado(eEmpleado lista[], int tam, eSector sectores[], int tamSec)
 {
     int i;
-    int j;
-    int e;
+    //int j;
+    //int e;
 
     i = buscarLibre(lista, tam);
 
@@ -41,9 +41,10 @@ void cargarEmpleado(eEmpleado lista[], int tam, eSector sectores[], int tamSec)
     }
 }
 
-int pedirSector (eSector sectores[])//pido ID sector
+int pedirSector (eSector sectores[], int tamSec)//pido ID sector
 {
-    int i;
+    //int i;
+    int j;
     int sector;
 
     printf("Estos son los sectores de la empresa, seleccione un sector para guardar al empleado:\n");
@@ -64,21 +65,23 @@ int pedirHorasTrabajadas ()//Pido horas trabajadas
     int horasTrabajadas;
 
     printf("Ingrese la cantidad de horas trabajadas por el empleado: \n");
-    scanf("d", &horasTrabajadas);
+    scanf("%d", &horasTrabajadas);
 
     return horasTrabajadas;
 }
 
-int calcularSueldoBruto (eEmpleado lista[], int tamLista, eSector sectores[], int tamSectores)
+/*int calcularSueldoBruto (eEmpleado lista[], int tamLista, eSector sectores[], int tamSectores)
 {
     int horas = pedirHorasTrabajadas;
 
+//TERMINAR-
 
 
 
 
+}*/
 
-}
+
 
 
 void mostrarListaEmpleados(eEmpleado lista[], int tam, eSector sectores[], int ts)
@@ -88,7 +91,7 @@ void mostrarListaEmpleados(eEmpleado lista[], int tam, eSector sectores[], int t
     {
         if(lista[i].estado!=LIBRE)
         {
-            mostrarEmpleado(lista[i], sectores, ts);
+            mostrarEmpleado(lista, sectores, ts);
         }
 
     }
@@ -96,7 +99,7 @@ void mostrarListaEmpleados(eEmpleado lista[], int tam, eSector sectores[], int t
 
 
 
-void mostrarEmpleado(eEmpleado unEmpleado, eSector sectores[], int ts)
+void mostrarEmpleado(eEmpleado lista[], eSector sectores[], int ts)
 {
 
     char descripcionSector[20];
@@ -104,14 +107,14 @@ void mostrarEmpleado(eEmpleado unEmpleado, eSector sectores[], int ts)
 
     for(i=0; i<ts; i++)
     {
-        if(unEmpleado.idSector==sectores[i].idSector)
+        if(lista[i].idSector==sectores[i].idSector)
         {
             strcpy(descripcionSector, sectores[i].descripcion);
             break;
         }
     }
 
-    printf("%4d %10s %c %4f %4f   %s\n", unEmpleado.legajo,unEmpleado.nombre, unEmpleado.sexo, unEmpleado.sueldoBruto,unEmpleado.sueldoNeto,descripcionSector);
+    printf("%4d %10s %c %4f %4f   %s\n", lista[i].legajo, lista[i].nombre, lista[i].sexo, lista[i].sueldoBruto, lista[i].sueldoNeto,descripcionSector);
 
 
 
@@ -297,6 +300,42 @@ int contarCarlos(eEmpleado lista[], int tam)
 
     return contadorCarlos;
 }
+
+void encontrarEmpleadosPorSector(eEmpleado lista[], int tamEmpleado, eSector sectores[], int tamSector)
+{
+    int i;
+    int j;
+
+    for(j = 0; j<tamSector; j++)
+    {
+        printf("Sector %d: %s.\n", sectores[j].idSector, sectores[j].descripcion);//FUNCIONA
+
+        for(i = 0; i<tamEmpleado; i++)
+        {
+            if(sectores[j].idSector == lista[i].idSector)
+            {
+                mostrarEmpleado(lista, sectores, tamEmpleado);//NO FUNCIONA.
+            }
+        }
+    }
+}
+
+/*void contarEmpleadosPorSector(eEmpleado lista[], int tamEmpleado, eSector sectores[], int tamSector)
+{
+    eAuxiliar auxiliarcontador;
+
+    int i;
+
+    //transfiero valores de la estructura Sector a la estructura Auxiliar.
+
+    for(i=0; i<tamSector; i++)
+    {
+        eAuxiliar auxiliarcontador[i].idSector = sectores[i].idSector;
+
+    }*/
+
+
+
 
 
 

@@ -56,6 +56,10 @@ hardcodearDatosEmpleados(lista,6);
 
                 break;
 
+            case 6:
+                encontrarEmpleadosPorSector(lista, T, sectores, 3);
+                break;
+
 
         }
     }while(opcion!=10);
