@@ -307,6 +307,7 @@ void encontrarEmpleadosPorSector(eEmpleado lista[], int tamEmpleado, eSector sec
     int j;
 
     for(j = 0; j<tamSector; j++)
+
     {
         printf("Sector %d: %s.\n", sectores[j].idSector, sectores[j].descripcion);//FUNCIONA
 
@@ -314,7 +315,7 @@ void encontrarEmpleadosPorSector(eEmpleado lista[], int tamEmpleado, eSector sec
         {
             if(sectores[j].idSector == lista[i].idSector)
             {
-                mostrarEmpleado(lista, sectores, tamEmpleado);//NO FUNCIONA.
+                mostrarEmpleado(lista, sectores, tamSector);//NO FUNCIONA.
             }
         }
     }

@@ -8,6 +8,7 @@ typedef struct
     int idSector;
     char descripcion [60];
     int contadorEmpleados;
+
 }eAuxiliar;
 
 
