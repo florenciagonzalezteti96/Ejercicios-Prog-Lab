@@ -13,8 +13,9 @@ typedef struct
     int anioDeCreacion;
 
 } eEstudio;
-
+#include "peliculas.h"//INCLUYO LA BIBLIOTECA CON EL ARRAY DEPUES DEL ENDIF PARA QUE ME RECONOZCA LA ESTRUCTURA.
 #endif // ESTUDIOS_H_INCLUDED
+
 
 void cargarEstudio(eEstudio lista[], int tam);
 int buscarLibre(eEstudio lista[], int tam);
@@ -25,4 +26,6 @@ void mostrarEstudio(eEstudio unEstudio);
 int mayorIdEstudio(eEstudio lista[], int tam);
 void modificarEstudio(eEstudio lista[], int tam, int id);
 void borrarEstudio(eEstudio lista[], int tam, int id);
-void mostrarEstudioConPelicilas(eEstudio listaEstudios[], int tamest, ePelicula listaPeliculas[], int tampeli);
+void mostrarEstudioConPelicilas(eEstudio listaEstudios[] , int tamest, ePelicula listaPeliculas[], int tampeli);
+
+

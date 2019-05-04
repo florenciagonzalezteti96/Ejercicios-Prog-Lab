@@ -15,11 +15,13 @@ typedef struct
     int anioDeEstreno;
 
 } ePelicula;
-
+#include "estudios.h"
 #endif // PELICULAS_H_INCLUDED
+
+
 
 void inicializarPelicula(ePelicula lista[], int tam);
 void harcodearPelicula(ePelicula lista[]);
 void mostrarListaPeliculas(ePelicula lista[], int tam);
 void mostrarPelicula(ePelicula unaPelicula);
-void mostrarPeliculasConEstudio(eEstudio listaEstudios[] , int tamest, ePelicula listaPeliculas[], int tampeli);
+void mostrarPeliculasConEstudio(eEstudio listaEstudios[], int tamest, ePelicula listaPeliculas[], int tampeli);

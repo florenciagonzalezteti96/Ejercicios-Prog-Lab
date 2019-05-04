@@ -17,6 +17,8 @@ int main()
     harcodearPelicula(listaPeliculas);
     //mostrarEstudioConPelicilas(listaEstudios, T, listaPeliculas, T);
     mostrarPeliculasConEstudio(listaEstudios, T, listaPeliculas, T);
+
+
     /*
 
     mostrarListaEstudios(listaEstudios, T);

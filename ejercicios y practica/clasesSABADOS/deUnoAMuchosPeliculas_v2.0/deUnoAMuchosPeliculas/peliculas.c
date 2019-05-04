@@ -53,18 +53,18 @@ void mostrarPelicula(ePelicula unaPelicula)
     printf("%d %10s %10s %d %f\n", unaPelicula.id, unaPelicula.titulo, unaPelicula.director, unaPelicula.anioDeEstreno, unaPelicula.duracion);
 }
 
-void mostrarPeliculasConEstudio(eEstudio listaEstudios[] , int tamest, ePelicula listaPeliculas[], int tampeli)
+void mostrarPeliculasConEstudio(eEstudio listaEstudios[], int tamest, ePelicula listaPeliculas[], int tampeli)
 {
     int i;
     int j;
     for(i=0; i<tampeli; i++)
     {
-        if(listaEstudios[i].estado!=LIBRE) {
+        if(listaPeliculas[i].estado!=LIBRE) {
             mostrarPelicula(listaPeliculas[i]);
 
             for(j=0; j<tampeli; j++)
             {
-                if( listaEstudios[i].id == listaPeliculas[j].idEstudio && listaPeliculas[j].estado != LIBRE)
+                if( listaEstudios[i].id == listaPeliculas[j].idEstudio && listaEstudios[j].estado != LIBRE)
                 {
                     mostrarEstudio(listaEstudios[j]);
                 }
