@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#define LIBRE 1
+#define OCUPADO 0
 
 void mostrarMenuPrincipal(int opcion, char opcionesEnElMenu[], sEmployee list[], int len)
 {
@@ -27,9 +29,11 @@ void mostrarMenuPrincipal(int opcion, char opcionesEnElMenu[], sEmployee list[],
             break;
         }
     }
-    while(opcion<6);
+    while(opcion<=6);
 }
+//INGRESO DE EMPLEADOS:
 
+//INICIALIZAR ESPACIOS PARA INGRESO DE DATOS
 int initEmployees(sEmployee list[], int len)//INICIALIZO LOS ESPACIOS COMO LIBRES.
 {
    //int retorno = 0;
@@ -37,13 +41,17 @@ int initEmployees(sEmployee list[], int len)//INICIALIZO LOS ESPACIOS COMO LIBRE
     int i;
     for(i=0; i<len; i++)
     {
-        list[i].isEmpty = 1;
+        list[i].isEmpty = LIBRE;
     }
 
     //return retorno;
     return 0;
 
 }
+//INGRESO DE DATOS
+//CALCULO DEL ID
+//INFORMO DATOS A INGRESAR --> PIDO CONFIRMACION O VOLVER A INGRESAR DATOS.
+
 
 int buscarEspacioLibre(sEmployee list[], int len)
 {
@@ -52,48 +60,50 @@ int buscarEspacioLibre(sEmployee list[], int len)
 
     for(i=0;i<len;i++)
     {
-        if(list[i].isEmpty == 1)
+        if(list[i].isEmpty == LIBRE)
         {
             retorno = 1;
+            break;
         }
     }
 
     return retorno;
 }
 
-void cargarDatosDeEmpleado(sEmployee list[], int len)
+/*void cargarDatosDeEmpleado(sEmployee list[], int len)
 {
     int i = 0000;
-    int j = buscarEspacioLibre(list, len);
 
+    int m;
 
-
-    if(j != 0)
+    if(buscarEspacioLibre(list, len) == 1)//si hay espacio libre
     {
-        printf("Ingrese nombre de empleado/a: \n");
-        fflush(stdin);
-        gets(list[j].name);
-        printf("Ingrese apellido de empleado/a: \n");
-        fflush(stdin);
-        scanf("%s", list[j].lastName);
-        printf("Ingrese salario de empleado/a: \n");
-        scanf("%f", &list[j].salary);
-        printf("Ingrese el sector de empleado/a: \n");
-        scanf("%d", &list[j].sector);
-        i++;
-        list[j].id = i;
+        for(m=0; m<len; m++)
+        {
+            printf("Ingrese nombre de empleado/a: \n");
+            fflush(stdin);
+            gets(list[j].name);
+            printf("Ingrese apellido de empleado/a: \n");
+            fflush(stdin);
+            gets(list[j].lastName);
+            printf("Ingrese salario de empleado/a: \n");
+            scanf("%f", &list[j].salary);
+            printf("Ingrese el sector de empleado/a: \n");
+            scanf("%d", &list[j].sector);
+            i++;
+            list[j].id = i;
 
-        list[j].isEmpty = 0;
+            list[j].isEmpty = 0;
 
+            break;
+        }
     }
     else
     {
-        printf("No hay espacio");
-
+        printf("No hay espacio.");
     }
 
-
-}
+}*/
 
 
 

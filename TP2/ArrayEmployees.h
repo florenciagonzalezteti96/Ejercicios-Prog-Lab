@@ -12,3 +12,4 @@ typedef struct
 int initEmployees(sEmployee list[], int len);
 void cargarDatosDeEmpleado(sEmployee list[], int len);
 void mostrarMenuPrincipal(int opcion, char opcionesEnElMenu[], sEmployee list[], int len);
+int buscarEspacioLibre(sEmployee list[], int len);

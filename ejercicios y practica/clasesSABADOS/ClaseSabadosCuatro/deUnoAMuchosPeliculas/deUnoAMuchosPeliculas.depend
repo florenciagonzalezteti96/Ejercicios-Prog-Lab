@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1556973528 source:/media/usuario/compartida/#enC/deUnoAMuchosPeliculas/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"estudios.h"
+	"peliculas.h"
+
+1556973308 source:/media/usuario/compartida/#enC/deUnoAMuchosPeliculas/estudios.c
+	"estudios.h"
+
+1556973182 /media/usuario/compartida/#enC/deUnoAMuchosPeliculas/estudios.h
+
+1556973095 /media/usuario/compartida/#enC/deUnoAMuchosPeliculas/peliculas.h
+
+1556973296 source:/media/usuario/compartida/#enC/deUnoAMuchosPeliculas/peliculas.c
+	"peliculas.h"
+
+1556978713 source:d:\florencia\ejercicios y practica\clasessabados\clasesabadoscuatro\deunoamuchospeliculas\estudios.c
+	"estudios.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1556977345 d:\florencia\ejercicios y practica\clasessabados\clasesabadoscuatro\deunoamuchospeliculas\estudios.h
+
+1556978423 source:d:\florencia\ejercicios y practica\clasessabados\clasesabadoscuatro\deunoamuchospeliculas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"estudios.h"
+	"peliculas.h"
+
+1556977494 d:\florencia\ejercicios y practica\clasessabados\clasesabadoscuatro\deunoamuchospeliculas\peliculas.h
+
+1556978348 source:d:\florencia\ejercicios y practica\clasessabados\clasesabadoscuatro\deunoamuchospeliculas\peliculas.c
+	"peliculas.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

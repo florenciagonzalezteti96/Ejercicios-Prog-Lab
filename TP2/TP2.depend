@@ -12,3 +12,16 @@
 	<stdio.h>
 	<stdlib.h>
 
+1556973857 source:d:\florencia\tp2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayEmployees.h"
+
+1556973732 d:\florencia\tp2\arrayemployees.h
+
+1556973798 source:d:\florencia\tp2\arrayemployees.c
+	"ArrayEmployees.h"
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
