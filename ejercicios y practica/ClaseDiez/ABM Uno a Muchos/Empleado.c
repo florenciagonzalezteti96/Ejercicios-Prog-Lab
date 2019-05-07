@@ -93,8 +93,8 @@ void mostrarListaEmpleados(eEmpleado lista[], int tam, eSector sectores[], int t
         {
             mostrarEmpleado(lista, sectores, ts);
         }
-
     }
+
 }
 
 
