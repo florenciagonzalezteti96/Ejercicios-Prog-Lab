@@ -5,6 +5,11 @@ int cargarVectorConPunteros(int* pVector, int tam, char mensajeDeIngreso[]);
 int mostrarVectorConPunteros(int* pVector, int tam, char mensajeParaMostrar[]);
 int buscarMaximoEnVectorConPunteros(int* pVector, int tam, int* maximo);
 void mostrarMaximoConPunteros(int* pVector, int tam, int* maximo);
+int ordenarDeMayorAMenorVectorConPunteros(int* pVector, int tam);
+int ordenarDeMenorAMayorVectorConPunteros(int* pVector, int tam);
+int sacarPromedioEnVectorConPunteros(int *pVector, int tam);
+
+
 
 int main()
 {
@@ -17,23 +22,12 @@ int main()
     cargarVectorConPunteros(pVector, 5, "Ingrese un valor: \n");
     mostrarVectorConPunteros(pVector, 5, "Este es el vector: \n");
     mostrarMaximoConPunteros(pVector, 5, &maximo);
+    ordenarDeMayorAMenorVectorConPunteros(pVector, 5);
+    ordenarDeMenorAMayorVectorConPunteros(pVector,5);
+    sacarPromedioEnVectorConPunteros(pVector, 5);
 
     return 0;
 }
-
-/*int inicializarVector(int vector[], int tam)
-{
-    int i;
-    int retorno = -1;
-    for(i=0; i<tam; i++)
-    {
-        vector[i] = 0;
-        retorno = 0;
-    }
-
-    return retorno;
-}*/
-
 
 int cargarVectorConPunteros(int* pVector, int tam, char mensajeDeIngreso[])
 {
@@ -80,11 +74,69 @@ int mostrarVectorConPunteros(int* pVector, int tam, char mensajeParaMostrar[])
     return retorno;
 }
 
-int ordenarVectorConPunteros(int vector[], int tam)
+int ordenarDeMayorAMenorVectorConPunteros(int* pVector, int tam)
 {
-    int retorno = -1;
+    int retorno;
+    int i;
+    int j;
+    int aux;
 
+    if(pVector != NULL)
+    {
+        for(i=0;i<tam;i++)
+        {
+            for(j=i+1;j<tam;j++)
+            {
+                if(*(pVector+i) < *(pVector+j))
+                {
+                    aux = *(pVector+i);
+                    *(pVector+i) = *(pVector+j);
+                    *(pVector+j) = aux;
+                }
+            }
+        }
+        retorno = 0;
+    }
+    else
+    {
+        printf("No se pudo ordenar.");
+        retorno = -1;
+    }
 
+    mostrarVectorConPunteros(pVector, tam, "Este es el vector ingresado: \n");
+
+    return retorno;
+}
+int ordenarDeMenorAMayorVectorConPunteros(int* pVector, int tam)
+{
+    int retorno;
+    int i;
+    int j;
+    int aux;
+
+    if(pVector != NULL)
+    {
+        for(i=0; i<tam; i++)
+        {
+            for(j=i+1; j<tam; j++)
+            {
+                if(*(pVector+i) > *(pVector+j))
+                {
+                    aux = *(pVector+i);
+                    *(pVector+i) = *(pVector+j);
+                    *(pVector+j) = aux;
+                }
+            }
+        }
+        retorno = 0;
+    }
+    else
+    {
+        printf("No se pudo ordenar.");
+        retorno = -1;
+    }
+
+    mostrarVectorConPunteros(pVector, tam, "Este es el vector ingresado: \n");
 
     return retorno;
 }
@@ -111,7 +163,7 @@ int buscarMaximoEnVectorConPunteros(int* pVector, int tam, int* maximo)
     }
     else
     {
-        printf("No se pudo realizar la busqueda.");
+        printf("No se pudo realizar la busqueda.\n");
     }
 
     return retorno;
@@ -119,23 +171,68 @@ int buscarMaximoEnVectorConPunteros(int* pVector, int tam, int* maximo)
 
 void mostrarMaximoConPunteros(int* pVector, int tam, int* maximo)
 {
-    int sePudo = buscarMaximoEnVectorConPunterosPosta(pVector, tam, maximo);
+    int sePudo = buscarMaximoEnVectorConPunteros(pVector, tam, maximo);
     if(sePudo != -1)
     {
-        printf("El maximo es: %d", *maximo);
+        printf("El maximo es: %d\n", *maximo);
     }
     else
     {
-        printf("No se pudo!");
+        printf("No se pudo!\n");
     }
 }
 
-int buscarPromedioEnVectorConPunteros(int vector[], int tam)
+int sacarPromedioEnVectorConPunteros(int *pVector, int tam)
 {
     int retorno = -1;
+    int acumulador = 0;
+    float promedio;
+    int i;
+
+    if(pVector != NULL)
+    {
+        for(i=0; i<tam; i++)
+        {
+            acumulador = acumulador + *(pVector+i);
+        }
+
+        promedio = (float) acumulador/tam;
+
+        printf("El promedio es %.2f\n", promedio);
+
+        retorno = 0;
+    }
 
     return retorno;
 }
+
+int buscarValorEnVector(int* pVector, int tam)
+{
+    int seEncontro = -1;
+    int numeroAEncontrar;
+    int* numeroEncontrado;
+    int i;
+
+    if(pVector != NULL)
+    {
+        printf("Ingrese un valor para encontrar: ");
+        scanf("%d", numeroAEncontrar);
+
+        for(i=0; i<tam; i++)
+        {
+            if(numeroAEncontrar == *(pVector+i))
+            {
+                *numeroEncontrado = *(pVector+i);
+                seEncontro = 0;
+                break;
+            }
+        }
+    }
+
+    return seEncontro;
+}
+
+int mos
 
 int borrarValorDeVectorConPunteros(int vector[], int tam)
 {
