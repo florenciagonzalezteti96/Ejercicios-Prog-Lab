@@ -1,9 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define T 5
+
+
 int main()
 {
-    /*EJERCICIO 1.
+    /*
+
+    *************************************************
+
+    EJERCICIO 1.
 
     //crear puntero a entero
 
@@ -44,8 +51,13 @@ int main()
     //para liberar espacio en HEAP utilizo la funcion --- FREE ---, para que en otra oportunidad en sistema operativo use ese segmento de memoria para guardar otra variable.
     //ayuda para inicializar en 0, puedo tambien llamar en una funcion miCalloc a un malloc y luego inicializar todos esos elementos en 0.
 
+    *********************************************************************
     */
 
+    /*
+    *********************************************************
+
+    EJERCICIO 2.
 
     int* pNumeros;//creo un vector puntero apuntando al HEAP.
     int i;
@@ -69,9 +81,77 @@ int main()
         }
     }
 
+    ***************************************************************
+    */
+
+    /*
+
+    EJERCICIO 3.
+
+    FUNCION --- REALLOC --- da una nueva dimension a la memoria de la variable, reasigna espacio en memoria.
+    si no encuentra espacio en memoria, el sistema operativo busca espacio consecutivo en memoria sin referencia,
+    compromete a ese espacio en memoria, copia valores anteriormente guardados, libera el espacio usado anteriormente
+    y asigna al puntero el nuevo espacio consecutivo elegido.*/
+
+    //SI AUN ASI NO ENCUENTRA ESPACIO DISPONIBLE, DEVUELVE NULO.
+    int* pNumeros;
+    int* pAuxiliar;
+    int i;
+
+    pNumeros = (int*) malloc(sizeof(int)*5);
+
+    if(pNumeros != NULL)
+    {
+        //CARGA LOS PRIMEROS NUMEROS:
+        printf("Ingrese un numero: \n");
+        for(i=0; i<T; i++)
+        {
+            scanf("%d", pNumeros+i);
+        }
+        printf("Estos son los primeros numeros:\n");
+        for(i=0; i<5; i++)
+        {
+            printf("%d\n", *(pNumeros + i));
+        }
+        //CARGA DE LOS SEGUNDOS NUMEROS:
+        pAuxiliar = (int*) realloc(pNumeros,sizeof(int)*(T+5));
+
+        //MUESTRO LOS ULTIMOS NUMEROS:
+        if(pAuxiliar != NULL)
+        {
+            pNumeros = pAuxiliar;
+
+            printf("Ingrese un numero: \n");
+            for(i=T; i<T+5; i++)
+            {
+                scanf("%d", pNumeros+i);
+            }
+            printf("Estos son los ultimos numeros:\n");
+            for(i=T; i<T+5; i++)
+            {
+                printf("%d\n", *(pNumeros + i));
+            }
+        }
+        else
+        {
+            printf("ALGO FALLO!");
+        }
+    }
+    else
+    {
+        printf("NO HAY MEMORIA");
+    }
 
 
 
+    //MUESTRO TODOS LOS NUMEROS
+    printf("Estos son todos los numeros:\n");
+    for(i=0; i<T+5; i++)
+    {
+        printf("%d\n", *(pNumeros + i));
+    }
+
+    free(pAuxiliar);
     return 0;
 }
 
