@@ -9,4 +9,5 @@ typedef struct
 //eEmpleado* new_EmpleadoParametros(char* mensajeIngresoLegajo, char* mensajeIngresoNombre, float mensajeIngresoSalario);
 eEmpleado* new_EmpleadoParametros(int, char*, float);
 int recibirYGuardarEmpleadoEnBinario (eEmpleado*);
-int recibirYLeerEmpleadoEnTxt (eEmpleado* unEmpleado);
+int recibirYEscribirEmpleadoEnTxt (eEmpleado* unEmpleado);
+

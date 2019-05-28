@@ -22,6 +22,11 @@ int main()
         }
     }
 
+    int respuestaDos = recibirYGuardarEmpleadoEnBinario(unEmpleado);
+
+
+
+
 
     return 0;
 }

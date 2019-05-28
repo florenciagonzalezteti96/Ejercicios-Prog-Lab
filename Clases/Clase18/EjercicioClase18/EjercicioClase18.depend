@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1559012188 source:c:\users\gonzalez\desktop\florencia\clases\clase18\ejercicioclase18\main.c
+1559013372 source:c:\users\gonzalez\desktop\florencia\clases\clase18\ejercicioclase18\main.c
 	"Empleado.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1559013054 c:\users\gonzalez\desktop\florencia\clases\clase18\ejercicioclase18\empleado.h
+1559013499 c:\users\gonzalez\desktop\florencia\clases\clase18\ejercicioclase18\empleado.h
 
 1559012335 source:c:\users\gonzalez\desktop\florencia\clases\clase18\ejercicioclase18\empleado.c
 	"Empleado.h"

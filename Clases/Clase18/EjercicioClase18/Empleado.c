@@ -96,12 +96,11 @@ int recibirYLeerEmpleadoEnBinario (eEmpleado* unEmpleado)
     return retorno;
 }
 
-int recibirYLeerEmpleadoEnTxt (eEmpleado* unEmpleado)
+int recibirYEscribirEmpleadoEnTxt (eEmpleado* unEmpleado)
 {
     int retorno = -1;
 
     FILE* pUnEmpleado;
-    int cantidad;
 
     if(unEmpleado != NULL)
     {
@@ -109,32 +108,23 @@ int recibirYLeerEmpleadoEnTxt (eEmpleado* unEmpleado)
         {
             printf("ERROR. No se puede abrir el archivo!");
         }
-        else
+        if(feof(pUnEmpleado))
         {
-            cantidad = fread(unEmpleado, sizeof(eEmpleado), 1, pUnEmpleado);
-            if(cantidad<1)
-            {
-                if(feof(pUnEmpleado))
-                {
-                    printf("ERROR.");
-                }
-            }
-            else
-            {
-                fgets(unEmpleado->legajo,20,pUnEmpleado);
-
-                fgets(unEmpleado->nombre,20,pUnEmpleado);
-                fgets(unEmpleado->salario,20,pUnEmpleado);
-                printf("%d", unEmpleado->legajo);
-                printf("%s", unEmpleado->nombre);
-
-                printf("%f", unEmpleado->salario);
-                retorno = 0;
-            }
+            printf("ERROR.");
         }
 
-        fclose(pUnEmpleado);
+        else
+        {
+            fprintf(pUnEmpleado, "%d",unEmpleado->legajo);
+            fprintf(pUnEmpleado, "%s",unEmpleado->nombre);
+            fprintf(pUnEmpleado, "%f",unEmpleado->salario);
+
+            retorno = 0;
+        }
     }
+
+    fclose(pUnEmpleado);
+}
     else
     {
         printf("ERROR.");
