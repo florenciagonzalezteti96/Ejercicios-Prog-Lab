@@ -18,23 +18,24 @@ eEmpleado* new_EmpleadoParametros(int legajo, char* nombre, float salario)
     return empleadoRetorno;
 }
 
-int recibirYGuardarEmpleadoEnBinario (eEmpleado* unEmpleado)
+int recibirYGuardarEmpleadoEnBinario(eEmpleado* UnEmpleado)
 {
     int retorno = -1;
 
-    FILE* pUnEmpleado;
-    int cantidad;
+    FILE* pUnEmpleado;//creo un archivo.
 
-    if(unEmpleado != NULL)
+    int cantidad;//para chequear el fwrite.
+
+    if(unEmpleado != NULL)//valido el puntero que recibe la funcion
     {
-        if((pUnEmpleado=fopen("UnEmpleado.dat","rb")) == NULL)
+        if((pUnEmpleado=fopen("UnEmpleado","rb")) == NULL)//valido que se pueda abrir el archivo o no.
         {
             printf("ERROR. No se puede abrir el archivo!");
         }
         else
         {
-            cantidad = fwrite(unEmpleado, sizeof(eEmpleado), 1, pUnEmpleado);
-            if(cantidad<1)
+            cantidad = fwrite(unEmpleado, sizeof(eEmpleado), 1, pUnEmpleado);//si lo pudo abrir guardo el fwrite en una variable para validar.
+            if(cantidad != 1)
             {
                 retorno = -1;
             }
@@ -43,8 +44,6 @@ int recibirYGuardarEmpleadoEnBinario (eEmpleado* unEmpleado)
                 retorno = 0;
             }
         }
-
-        fclose(pUnEmpleado);
     }
     else
     {

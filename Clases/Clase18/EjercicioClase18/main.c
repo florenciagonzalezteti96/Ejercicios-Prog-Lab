@@ -8,8 +8,6 @@ int main()
     eEmpleado* unEmpleado;
     int respuestaUno = 0;
 
-    FILE* pUnEmpleado;
-
     unEmpleado = new_EmpleadoParametros(2000,"Florencia",1500);
 
     respuestaUno = recibirYGuardarEmpleadoEnBinario(unEmpleado);
@@ -21,12 +19,6 @@ int main()
             printf("%d--%s--%f--", unEmpleado->legajo, unEmpleado->nombre, unEmpleado->salario);
         }
     }
-
-    int respuestaDos = recibirYGuardarEmpleadoEnBinario(unEmpleado);
-
-
-
-
 
     return 0;
 }
