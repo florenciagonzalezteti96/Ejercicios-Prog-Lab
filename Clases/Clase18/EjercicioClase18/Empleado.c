@@ -2,8 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define PATHB "D:\\florencia\\Clases\\Clase18\\EjercicioClase18\\Datos.dat"
+#define PATHBDOS "D:\\florencia\\Clases\\Clase18\\EjercicioClase18\\DatosDos.dat"
 
-eEmpleado* new_EmpleadoParametros(int legajo, char* nombre, float salario)
+eEmpleado* new_EmpleadoParametros(int legajo, char* nombre, float salario)//getter
 {
     eEmpleado* empleadoRetorno;
     empleadoRetorno = (eEmpleado*)malloc(sizeof(eEmpleado));
@@ -18,7 +20,7 @@ eEmpleado* new_EmpleadoParametros(int legajo, char* nombre, float salario)
     return empleadoRetorno;
 }
 
-int recibirYGuardarEmpleadoEnBinario(eEmpleado* UnEmpleado)
+int escribirEmpleadoEnBinario(eEmpleado* unEmpleado)
 {
     int retorno = -1;
 
@@ -26,11 +28,55 @@ int recibirYGuardarEmpleadoEnBinario(eEmpleado* UnEmpleado)
 
     int cantidad;//para chequear el fwrite.
 
+    pUnEmpleado=fopen(PATHB,"wb");
+
     if(unEmpleado != NULL)//valido el puntero que recibe la funcion
     {
-        if((pUnEmpleado=fopen("UnEmpleado","rb")) == NULL)//valido que se pueda abrir el archivo o no.
+        if(pUnEmpleado == NULL)//valido que se pueda abrir el archivo o no.
         {
-            printf("ERROR. No se puede abrir el archivo!");
+            printf("ERROR. 01!");
+        }
+        else
+        {
+            cantidad = fwrite(unEmpleado, sizeof(eEmpleado), 1, pUnEmpleado);//si lo pudo abrir guardo el fwrite en una variable para validar.
+            if(cantidad != 1)
+            {
+                retorno = -1;
+            }
+            else
+            {
+
+                retorno = 0;
+            }
+        }
+    }
+    else
+    {
+        printf("ERROR. 02.");
+    }
+
+    fclose(pUnEmpleado);
+
+    free(pUnEmpleado);
+
+    return retorno;
+}
+
+int escribirMuchosEmpleadosEnBinario(eEmpleado* unEmpleado)
+{
+    int retorno = -1;
+
+    FILE* pUnEmpleado;//creo un archivo.
+
+    int cantidad;//para chequear el fwrite.
+
+    pUnEmpleado=fopen(PATHBDOS,"ab");//uso el ab para cargar varios datos y que no pise los anteriores.
+
+    if(unEmpleado != NULL)//valido el puntero que recibe la funcion
+    {
+        if(pUnEmpleado == NULL)//valido que se pueda abrir el archivo o no.
+        {
+            printf("ERROR. 03!");
         }
         else
         {
@@ -47,41 +93,96 @@ int recibirYGuardarEmpleadoEnBinario(eEmpleado* UnEmpleado)
     }
     else
     {
-        printf("ERROR.");
+        printf("ERROR. 04.");
     }
 
     fclose(pUnEmpleado);
 
+    free(pUnEmpleado);
+
     return retorno;
 }
 
-int recibirYLeerEmpleadoEnBinario (eEmpleado* unEmpleado)
+int leerEmpleadoEnBinario(eEmpleado* unEmpleado)
 {
     int retorno = -1;
 
     FILE* pUnEmpleado;
+
     int cantidad;
 
-    if(unEmpleado != NULL)
+    pUnEmpleado=fopen(PATHB,"rb");
+
+    if(1)
     {
-        if((pUnEmpleado=fopen("UnEmpleado.dat","rb")) == NULL)
+        if(pUnEmpleado == NULL)
         {
-            printf("ERROR. No se puede abrir el archivo!");
+            printf("ERROR 05. No se puede abrir el archivo!");
         }
         else
         {
             cantidad = fread(unEmpleado, sizeof(eEmpleado), 1, pUnEmpleado);
-            if(cantidad<1)
+
+            if(cantidad==1)
             {
                 if(feof(pUnEmpleado))
                 {
-                    printf("ERROR.");
+                    printf("ERROR 06.");
+                }
+                else
+                {
+                    printf("%d--%s--%f--", unEmpleado->legajo, unEmpleado->nombre, unEmpleado->salario);
+                    retorno = 0;
                 }
             }
-            else
+
+        }
+
+        fclose(pUnEmpleado);
+    }
+    else
+    {
+        printf("ERROR 07.");
+    }
+
+    return retorno;
+}
+
+int leerMuchosEmpleadosEnBinario()
+{
+    int retorno = -1;
+
+    FILE* pUnEmpleado;
+
+    eEmpleado unEmpleado;
+
+    int cantidad;
+
+    int i=0;
+
+    pUnEmpleado=fopen(PATHB,"rb");
+
+    if(1)
+    {
+        if(pUnEmpleado == NULL)
+        {
+            printf("ERROR 08. No se puede abrir el archivo !");
+        }
+        else
+        {
+            while(!feof(pUnEmpleado))
             {
-                printf("%d--%s--%f--", unEmpleado->legajo, unEmpleado->nombre, unEmpleado->salario);
-                retorno = 0;
+                cantidad = fread(&unEmpleado, sizeof(eEmpleado), 1, pUnEmpleado);
+                if(cantidad==1)
+                {
+                    printf("%d--%s--%f--", unEmpleado.legajo, unEmpleado.nombre, unEmpleado.salario);
+                    i++;
+                    retorno = 0;
+                }
+                else
+                {
+                    printf("ERROR 09");
+                }
             }
         }
 
@@ -89,13 +190,15 @@ int recibirYLeerEmpleadoEnBinario (eEmpleado* unEmpleado)
     }
     else
     {
-        printf("ERROR.");
+        printf("ERROR 10.");
     }
+
+    free(pUnEmpleado);
 
     return retorno;
 }
-
-int recibirYEscribirEmpleadoEnTxt (eEmpleado* unEmpleado)
+/*
+int escribirEmpleadoEnTxt (eEmpleado* unEmpleado)
 {
     int retorno = -1;
 
@@ -130,7 +233,7 @@ int recibirYEscribirEmpleadoEnTxt (eEmpleado* unEmpleado)
     }
 
     return retorno;
-}
+}*/
 
 
 

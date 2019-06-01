@@ -6,19 +6,39 @@
 int main()
 {
     eEmpleado* unEmpleado;
-    int respuestaUno = 0;
+    eEmpleado* segundoEmpleado;
+    eEmpleado* tercerEmpleado;
+
+    eEmpleado* listaDeEmpleados[10];
+
+    int respuestaUno;
+    int respuestaDos;
+    int respuestaTres;
 
     unEmpleado = new_EmpleadoParametros(2000,"Florencia",1500);
+    segundoEmpleado = new_EmpleadoParametros(2100,"Lucia",50000);
+    tercerEmpleado = new_EmpleadoParametros(2500,"Luca",55000);
 
-    respuestaUno = recibirYGuardarEmpleadoEnBinario(unEmpleado);
+    listaDeEmpleados[0]=unEmpleado;
+    listaDeEmpleados[1]=segundoEmpleado;
+    listaDeEmpleados[2]=tercerEmpleado;
 
-    if(respuestaUno != -1);
+
+    respuestaUno = escribirEmpleadoEnBinario(unEmpleado);
+    respuestaDos = escribirMuchosEmpleadosEnBinario(segundoEmpleado);
+    respuestaTres = escribirMuchosEmpleadosEnBinario(tercerEmpleado);
+
+    if(respuestaUno!=0 || respuestaDos!=0 || respuestaTres!=0)
     {
-        while(!feof(pUnEmpleado))
-        {
-            printf("%d--%s--%f--", unEmpleado->legajo, unEmpleado->nombre, unEmpleado->salario);
-        }
+        printf("ERROR");
     }
+
+    leerEmpleadoEnBinario(unEmpleado);
+    leerEmpleadoEnBinario(segundoEmpleado);
+    leerEmpleadoEnBinario(tercerEmpleado);
+
+
+
 
     return 0;
 }
